@@ -10,7 +10,6 @@ I always thought there had to be a better way, and wanted to mock-up some potent
 
 And this is an example of what the PDMP currently looks like in my state for the same patient (all of this is fake data, FYI).
 
-![PDMP Page 1](https://github.com/jrlegrand/jrlegrand.github.io/blob/master/img/fill-view/pdmp1.jpg)
-![PDMP Page 2](https://github.com/jrlegrand/jrlegrand.github.io/blob/master/img/fill-view/pdmp2.jpg)
+![PDMP](https://github.com/jrlegrand/jrlegrand.github.io/blob/master/img/fill-view/pdmp.jpg)
 
 How quickly can you tell whether or not this patient is filling controlled substances early with the PDF versus the visualization?
