@@ -1,28 +1,399 @@
 .App {
-  text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+body {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-size: .65rem;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+button.btn {
+	font-size: .65rem;
 }
 
-.App-title {
-  font-size: 1.5em;
+.fv-subtoolbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 15px;
+	margin-bottom: 10px;
 }
 
-.App-intro {
-  font-size: large;
+.dropdown-menu {
+	z-index: 9999;
+	font-size: .65rem;
+	min-width: 0;
+	padding: .2rem 0;
+	border-radius: .2rem;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.dropdown-item {
+	padding: .25rem .5rem;
+}
+
+.table {
+	background-color: #fff;
+	margin-top: 10px;
+	margin-bottom: 0px;
+	margin-top: 5px;
+}
+
+.table td, .table th {
+	padding: .4rem;
+}
+
+.table th {
+	border-top: 0px;
+}
+
+.fv-nav {
+	height: 4rem;
+	background-color: #1976d2;
+	color: #fff;
+	padding: 0 15px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.fv-nav-buttons .btn {
+	font-size: .65rem;
+	font-family: inherit;
+	color: #fff;
+	border: 1px solid #fff;
+}
+
+.fv-nav-buttons .btn:hover {
+	color: #000;
+	/*background-color: #63a4ff;*/
+	background-color: #fff;
+}
+
+.fv-nav-buttons {
+	display: flex;
+	padding-top: .65rem;
+}
+
+.fv-nav-buttons .btn-group {
+	margin-left: 5px;
+	display: flex;
+	flex-direction: column;
+}
+
+.fv-button-label {
+	font-size: .5rem;
+	text-transform: uppercase;
+	color: #eee;
+}
+
+
+.fv-nav-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.fv-nav-logo {
+	font-size: 1rem;
+	font-weight: bold;
+}
+
+.fv-nav-patient-info {
+	margin-left: 20px;
+}
+
+#timeline-ruler {
+	width: 100%;
+	background: #fff;
+	padding: 0 15px;
+	margin-bottom: 15px;
+}
+
+.fv-ruler-today-line, .fv-ruler-today-text {
+	fill: #004a9f;
+	font-weight: bold;
+	color: #004a9f;
+}
+
+.fv-ruler-today-text:hover {
+	cursor: pointer;
+	text-decoration: underline;
+	fill: #63a3ff;
+	color: #63a3ff;
+}
+
+.hidden {
+	display: none;
+}
+
+/*
+.fv-timeline-group:nth-of-type(even) {
+	background-color: #F5F5F5;
+}
+*/
+
+.fv-timeline-group {
+	padding: 15px 15px;
+	border: 1px solid #eee;
+	border-bottom: 2px solid #ccc;
+	margin-bottom: 15px;
+	background-color: #fff;
+}
+
+.fv-timeline-header {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 8px;
+}
+
+.fv-timeline-header-title-links {
+	display: flex;
+	justify-content: left;
+}
+
+.fv-timeline-label {
+	font-size: .75rem;
+	font-weight: bold;
+	margin-right: 15px;
+	padding: 0px;
+}
+
+.fv-timeline-label:hover {
+	cursor: pointer;
+}
+
+.fv-timeline-counts {
+	display: flex;
+	align-items: center;
+}
+
+.fv-timeline-count {
+	margin-right: 10px;
+	font-size: .7rem;
+	font-weight: bold;
+	color: #333;
+}
+
+.fv-table-collapse-button {
+	font-size: .7rem;
+	background-color: transparent;
+	padding: .25rem .3rem;
+	color: #000;
+}
+
+.fv-table-collapse-button:hover {
+	color: #1976d2;
+	cursor: cursor;
+	text-decoration: none;
+}
+
+
+.fv-link {
+	font-weight: bold;
+	/*color: #00838F;*/
+	color: #004ba0;
+}
+
+.fv-link:hover {
+	cursor: pointer;
+	text-decoration: underline;
+	color: #63a4ff;
+}
+
+.fv-row:hover, rect:hover {
+	cursor: pointer;
+}
+
+.fv-sub-nav {
+	display: flex;
+	justify-content: space-between;
+	margin: 10px 15px 0 15px;
+}
+
+/* sidebar */
+
+.fv-sidebar-nav {
+	padding: 10px 0;
+	height: 4rem;
+}
+
+.fv-overview-header {
+	display: flex;
+	flex-direction: column;
+}
+
+.fv-selected-fills-header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.fv-sidebar-header {
+	font-size: 1rem;
+	font-weight: bold;
+	display: flex;
+	flex-direction: left;
+}
+
+.fv-sidebar-subheader {
+	font-size: .75rem;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+
+.fv-card {
+	padding: 0;
+	margin-bottom: 15px;
+	background-color: #fff;
+	border-left: 4px solid #63a3ff;
+}
+
+.fv-card-badge {
+	padding: .2rem .4rem;
+	background-color: #8e24aa;
+	border-radius: 0.2rem;
+	color: #fff;
+	margin-left: .4rem;
+}
+
+.fv-card-header {
+	color: #333;
+	padding: 15px;
+	margin: 0;
+	font-weight: bold;
+	display: flex;
+	justify-content: space-between;
+}
+
+.fv-card-header:hover {
+	cursor: pointer;
+	background-color: #63a3ff;
+}
+
+.fv-card-header.open {
+	background-color: #63a3ff;
+	border-bottom: 1px solid #eaeaea;
+}
+
+.fv-card-header.open:hover {
+}
+
+.fv-card-body {
+	padding: 1rem;
+	margin: 0;
+}
+
+.fv-sidebar-card-arrow {
+	color: #ccc;
+}
+
+/* OLD CODE */
+
+
+
+
+.main-area {
+	height: 100%;
+	overflow: auto;
+}
+
+.main-area-content {
+	padding: 10px 15px;
+}
+
+.sidebar {
+	padding: 8px 15px 10px 15px;
+}
+
+
+
+.sidebar-filter-header {
+	cursor: pointer;
+}
+
+div.sidebar-filter-header:hover span.sidebar-filter-header-name {
+	color: #9E9E9E;
+}
+
+.sidebar-filter-checkboxes {
+	padding: 0 15px;
+}
+
+.selected-fills-sidebar {
+	background-color: #eee;
+	border-left: 1px solid #ccc;
+	right: 0;
+	height: 100%;
+	overflow: auto;
+}
+
+.fill-view-close-button .btn-link {
+	font-size: 1rem;
+	color: #000;
+}
+
+.fill-view-close-button .btn-link:hover {
+	color: #1976d2;
+}
+
+.fill-view-clear-button {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.sidebar-header {
+	font-size: 24px;
+}
+
+.selected-fill {
+	background-color: #fff;
+	padding: 10px 15px 15px 15px;
+	margin-bottom: 20px;
+	border-bottom: 2px solid #ccc;
+}
+
+.selected-fill-hover {
+	background-color: #bee5eb;
+}
+
+.table-container {
+}
+
+.react-bootstrap-table table {
+	border: 0;
+}
+
+.fv-table thead {
+	border-bottom: 2px solid #ccc;
+}
+
+.fv-table tr {
+	border-bottom: 1px solid #ccc;
+}
+
+.fv-table tr:last-child {
+	border-bottom: 0;
+}
+
+.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-top: 4px solid \9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+  }
+  
+.dropup .caret, .navbar-fixed-bottom .dropdown .caret {
+    border-top: 0;
+    border-bottom: 4px dashed;
+    border-bottom: 4px solid \9;
+    content: "";
+  }
+  
+.timeline rect:hover, .sidebar-chart rect:hover, .fv-table tr:hover, path:hover { 
+	cursor: pointer;
 }
